@@ -4,4 +4,4 @@ openai
 chromadb
 pydantic
 python-dotenv
-numpy
+numpy==2.4.6

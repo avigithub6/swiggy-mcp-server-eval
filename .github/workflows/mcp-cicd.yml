@@ -21,6 +21,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          python --version
+          python -m pip --version
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -51,7 +53,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "🚨 Swiggy MCP Build Failed: Quality Gate or Runtime Error"
           to: ${{ secrets.DEV_ALERT_EMAIL }}
-          from: "MCP CI/CD Quality Gate"
+          from: ${{ secrets.MAIL_USERNAME }}
           body: file://eval_report.txt
 
       # Email Developer when Quality Gate Passes
