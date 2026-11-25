@@ -1,0 +1,38 @@
+====================================================
+       SWIGGY MCP SERVER EVALUATION REPORT          
+====================================================
+Total Questions   : 50
+✅ Correct Tool   : 42/50 (84.0%)
+⚠️ Wrong Tool     : 8/50 (16.0%)
+❌ Tool Failed    : 0/50 (0.0%)
+⏱️ Avg Latency    : 4683.06 ms
+⚡ P95 Latency    : 7510.47 ms
+🪙 Total Tokens   : 68988 (Cost: $0.00 - Groq Free Tier)
+🎯 Quality Gate   : PASSED ✅ (Min: 80%)
+====================================================
+
+--- ROOT CAUSE FAILURE LOG (Top Failures) ---
+[Q16 | direct] ⚠️ WRONG TOOL
+   Query: Order 1 litre toned milk and brown bread from Instamart.
+   Expected: ['search_instamart_items'] | Actual: ['search_instamart_items', 'search_instamart_items']
+[Q18 | direct] ⚠️ WRONG TOOL
+   Query: Search Instamart for paracetamol tablets and ORS.
+   Expected: ['search_instamart_items'] | Actual: ['search_instamart_items', 'search_instamart_items']
+[Q19 | direct] ⚠️ WRONG TOOL
+   Query: Find raw penne pasta and arrabbiata sauce jar on Instamart.
+   Expected: ['search_instamart_items'] | Actual: ['search_instamart_items', 'search_instamart_items']
+[Q20 | direct] ⚠️ WRONG TOOL
+   Query: Check if tea leaves, ginger, and cardamom are available on Instamart.
+   Expected: ['search_instamart_items'] | Actual: ['search_instamart_items', 'search_instamart_items', 'search_instamart_items']
+[Q28 | ambiguous] ⚠️ WRONG TOOL
+   Query: I want ingredients to make masala chai at home.
+   Expected: ['search_instamart_items'] | Actual: []
+[Q29 | ambiguous] ⚠️ WRONG TOOL
+   Query: Get me a hot cup of filter coffee and masala dosa.
+   Expected: ['search_food_dishes'] | Actual: ['search_food_dishes', 'search_food_dishes', 'search_food_dishes']
+[Q40 | ambiguous] ⚠️ WRONG TOOL
+   Query: I have a fever, get me paracetamol and electrolytes quickly.
+   Expected: ['search_instamart_items'] | Actual: ['search_instamart_items', 'search_instamart_items']
+[Q43 | multistep] ⚠️ WRONG TOOL
+   Query: Verify if SWG-103 is delivered, and if so request a refund because dosa was cold.
+   Expected: ['get_order_details', 'request_order_refund'] | Actual: ['track_live_order', 'request_order_refund']

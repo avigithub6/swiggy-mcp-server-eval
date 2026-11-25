@@ -63,6 +63,18 @@ def init_db():
     conn.commit()
     conn.close()
 
+def reset_db():
+    """Drop existing tables and re-seed fresh data for deterministic evaluation runs."""
+    conn = get_connection()
+    conn.executescript("""
+        DROP TABLE IF EXISTS orders;
+        DROP TABLE IF EXISTS coupons;
+    """)
+    conn.commit()
+    conn.close()
+    init_db()
+
+
 if __name__ == "__main__":
     init_db()
     print(f"✅ Database initialized successfully at: {DB_PATH}")

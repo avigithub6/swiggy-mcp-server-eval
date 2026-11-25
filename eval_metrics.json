@@ -1,0 +1,11 @@
+{
+  "total": 50,
+  "correct": 42,
+  "wrong_tool": 8,
+  "tool_failed": 0,
+  "accuracy_pct": 84.0,
+  "avg_latency_ms": 4683.06,
+  "p95_latency_ms": 7510.47,
+  "total_tokens": 68988,
+  "passed": true
+}
