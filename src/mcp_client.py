@@ -19,7 +19,7 @@ logger = logging.getLogger("SwiggyMCPClient")
 load_dotenv(override=True)
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-DEFAULT_MODEL = "openai/gpt-oss-120b"
+DEFAULT_MODEL = "openai/gpt-oss-20b"
 
 if not GROQ_API_KEY:
     logger.error("GROQ_API_KEY is missing! Please set it in your .env file.")
